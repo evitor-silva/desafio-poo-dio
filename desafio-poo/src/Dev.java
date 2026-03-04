@@ -1,4 +1,3 @@
-package br.com.dio.desafio.dominio;
 
 import java.util.*;
 
@@ -30,11 +29,6 @@ public class Dev {
             soma += next;
         }
         return soma;
-
-        /*return this.conteudosConcluidos
-                .stream()
-                .mapToDouble(Conteudo::calcularXp)
-                .sum();*/
     }
 
 
@@ -74,4 +68,15 @@ public class Dev {
     public int hashCode() {
         return Objects.hash(nome, conteudosInscritos, conteudosConcluidos);
     }
+
+    @Override
+    public String toString() {
+        return "Dev{" +
+                "nome='" + nome + '\'' +
+                ", XP=" + calcularTotalXp() +
+                ", inscritos=" + conteudosInscritos.size() +
+                ", concluidos=" + conteudosConcluidos.size() +
+                '}';
+    }
+
 }

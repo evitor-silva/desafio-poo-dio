@@ -1,10 +1,10 @@
-package br.com.dio.desafio.dominio;
 
 import java.time.LocalDate;
 import java.util.HashSet;
 import java.util.LinkedHashSet;
 import java.util.Objects;
 import java.util.Set;
+import java.util.stream.Stream;
 
 public class Bootcamp {
     private String nome;
@@ -67,4 +67,10 @@ public class Bootcamp {
     public int hashCode() {
         return Objects.hash(nome, descricao, dataInicial, dataFinal, devsInscritos, conteudos);
     }
+
+    public void BootcampPrint() {
+        System.out.println("=== Devs inscritos no Bootcamp ===");
+        devsInscritos.forEach(dev -> System.out.println("- " + dev));
+    }
+
 }
